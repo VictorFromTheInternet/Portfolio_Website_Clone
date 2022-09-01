@@ -2,6 +2,7 @@
 /* Source Code Pro */
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 /* Global */
 * {
   box-sizing: border-box;
@@ -18,10 +19,29 @@ html, body{
   top: 0;
   z-index: 1;
   font-family: Lato, sans-serif;
-  background-image: url("Images/black clouds 2.jpg");
+  background-color: rgba(33,33,33,1);
   background-size: cover;
   padding-bottom: 0px;
 }
+
+/* hamburger menu  (mobile nav)*/
+.hamburger-toggle{
+  display: none;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: .75rem;
+  right: 1rem;
+  z-index: 1;
+  background: url("Images/menu-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: invert(80%);
+}
+.hamburger-toggle:hover{
+  filter: invert(95%);
+}
+
 
 /* Horizontal Navigation bar */  
 .nav ul{
@@ -48,18 +68,18 @@ html, body{
 .main-nav{
   text-align: center;
   font-size: 1em;
-  border-bottom: 1px solid rgba(225,225,225,.8); /*maroon*/
+  border-bottom: 1px solid rgba(225,225,225,.3); /* light grey */
 }
+
 
 /* cover image */ 
 .bleach-header{
   display: flex;
   position: relative;
-  top: 0;
+  max-width: 100vw;
   min-height: 100vh;
-  width: 100%;
-  background: url("Images/Bleach.png") no-repeat;
-  background-size: cover; 
+  background: url("Images/Bleach.png");
+  background-size: cover;
   align-content: center;
   align-items: center;
   justify-content: center;
@@ -70,17 +90,34 @@ html, body{
   font-size: 50pt;
   color: white;
   letter-spacing: 2px;
+  padding-left: 2rem;
 }
 .bleach-header h2{
   font-family: "Source-code-pro", monospace;
   font-weight: 200;
   font-style:italic;
   color: white;
+  padding-left: 2rem;
+
 }
 .bleach-header p{
   font-family: "Source-code-pro", monospace;
   font-weight: 200;
   color: white;
+  padding-left: 2rem;
+
+}
+.down-arrow{
+  position: absolute;
+  display: flex;
+  height: 50px;
+  width: 50px;
+  left: 50vw;
+  bottom: 50px; 
+  filter: invert(80%) ; /* change color to white */
+}
+.down-arrow:hover{
+  filter: invert(95%);
 }
 
 
@@ -178,3 +215,18 @@ p{
   color: #c8c8c8;
 }
 
+
+/* sizing media query*/
+@media (max-width: 800px){
+  .main-nav{
+    display: none;
+  }
+  
+  .hamburger-toggle{
+    display: flex;
+  }
+
+  .pfp-main{
+    display: none;
+  }
+}
